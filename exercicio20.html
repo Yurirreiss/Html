@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .red { color: red; }
+  .blue { color: blue; }
+  .green { color: green; }
+</style>
+</head>
+<body>
+
+<div id="fibonacci"></div>
+
+<script>
+function isPrime(num) {
+  if (num <= 1) return false;
+  if (num <= 3) return true;
+  if (num % 2 === 0 || num % 3 === 0) return false;
+  for (let i = 5; i * i <= num; i += 6) {
+    if (num % i === 0 || num % (i + 2) === 0) return false;
+  }
+  return true;
+}
+
+function generateFibonacci(count) {
+  const fibonacciDiv = document.getElementById("fibonacci");
+  let a = 1, b = 0, temp;
+  
+  for (let i = 0; i < count; i++) {
+    temp = a;
+    a = a + b;
+    b = temp;
+
+    let colorClass = "";
+    if (a % 2 === 0) {
+      colorClass = "blue";
+    } else {
+      colorClass = "red";
+    }
+    
+    if (isPrime(a)) {
+      colorClass = "green";
+    }
+    
+    const numberSpan = document.createElement("span");
+    numberSpan.className = colorClass;
+    numberSpan.textContent = a + " ";
+    fibonacciDiv.appendChild(numberSpan);
+  }
+}
+
+generateFibonacci(30);
+</script>
+
+</body>
+</html>

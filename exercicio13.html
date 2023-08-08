@@ -1,0 +1,39 @@
+<doctype html>
+<html>
+    <head>
+    <meta charset="utf-8">
+
+    </head>
+<body>
+
+ <script lang="JavaScript">
+
+var a, b, c;
+   
+   a = parseFloat(window.prompt("Informe o valor do primeiro lado"));
+   b = parseFloat(window.prompt("Informe o valor do segundo lado"));
+   c = parseFloat(window.prompt("Informe o valor do terceiro lado"));
+   if(a + b < c || a + c < b || b + c < a)
+   {
+
+    document.write("Nao e um triangulo");
+
+   }
+   else if (a === b && b === c) 
+   {
+       document.write("Esse triângulo é equilátero");
+   } 
+   else if (a === b || a === c || b === c) 
+   {
+       document.write("Esse triângulo é isósceles");
+   } 
+   else
+   {
+       document.write("Esse triângulo é escaleno");
+   }
+
+  </script>
+
+</body>
+
+</html>

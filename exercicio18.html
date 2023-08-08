@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabuadas de 1 a 20</title>
+    <style>
+        .tabuada {
+            border-collapse: collapse;
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+        }
+
+        .tabuada th,
+        .tabuada td {
+            border: 1px solid black;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .tabuada.vermelha {
+            background-color: red;
+        }
+
+        .tabuada.azul {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Tabuadas de 1 a 20</h1>
+
+<div id="tabuadas-container"></div>
+
+<script>
+    function criarTabelaTabuada(numero) {
+        var tabuada = '<table class="tabuada ' + (numero % 2 === 0 ? 'azul' : 'vermelha') + '">';
+        tabuada += '<tr><th colspan="4">Tabuada do ' + numero + '</th></tr>';
+
+        for (var i = 1; i <= 10; i++) {
+            tabuada += '<tr>';
+            tabuada += '<td>' + numero + ' x ' + i + '</td>';
+            tabuada += '<td>=</td>';
+            tabuada += '<td>' + (numero * i) + '</td>';
+            tabuada += '</tr>';
+        }
+
+        tabuada += '</table>';
+        return tabuada;
+    }
+
+    var tabuadasContainer = document.getElementById("tabuadas-container");
+    for (var numero = 1; numero <= 20; numero++) {
+        var tabelaTabuada = criarTabelaTabuada(numero);
+        tabuadasContainer.innerHTML += tabelaTabuada;
+    }
+</script>
+
+</body>
+</html>

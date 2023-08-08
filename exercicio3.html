@@ -1,0 +1,33 @@
+<DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf=8">
+
+</head>
+
+<body>
+
+ <script lang="JavaScript">
+ 
+ function calcularAreaQuadrado(diagonal) {
+const lado = diagonal / Math.sqrt(2);
+const area = lado * lado; 
+return area; 
+ }
+
+
+
+
+  const diagonalQuadrado = parseFloat(prompt("Digite o valor da diagonal do quadrado: "));
+  const areaDoQuadrado = calcularAreaQuadrado(diagonalQuadrado);
+  document.write("A área do quadrado é : " + areaDoQuadrado);
+
+   
+ </script>
+
+
+</body>
+
+</html>
